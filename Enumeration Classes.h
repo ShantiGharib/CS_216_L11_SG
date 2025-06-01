@@ -1,5 +1,5 @@
-#ifndef ENUM_CLASSES
-#define ENUM_CLASSES
+#ifndef ENUM_CLASSES_H
+#define ENUM_CLASSES_H
 
 enum class CreatureFields {
 
