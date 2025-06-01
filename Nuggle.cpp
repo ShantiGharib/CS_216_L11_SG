@@ -7,7 +7,9 @@
 Nuggle::Nuggle() {
     type = CreatureTypes::NUGGLE;
 }
+
 Nuggle::Nuggle(const Nuggle& source) : Creature(source) {}
+
 Nuggle::~Nuggle() {}
 
 int Nuggle::GetDamage() const {

@@ -5,19 +5,6 @@
 #include "GlobalFunctions.h"
 
 
-enum class CreatureFields;
-enum class CreatureTypes;
-enum class MemoryAllocationTags;
-enum class MainMenuOptions;
-class Creature;
-class Ceffyl;
-class Bahamut;
-class CyberBahamut;
-class Nuggle;
-class Army;
-class Game;
-
-
 int main() {
 
     srand(0);
@@ -65,72 +52,6 @@ int main() {
     }
     return EXIT_SUCCESS;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

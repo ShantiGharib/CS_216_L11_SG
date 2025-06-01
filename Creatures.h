@@ -31,20 +31,20 @@ public:
     virtual ~Creature();
 
 
+    void SetCreature(const std::string& creatureName, int health, int strength);
+    bool ReceiveDamage(int damage);
+    inline void HealCreature();
     inline int GetMaxHealth() const;
     inline int GetCurrentHealth() const;
     inline int GetStrength() const;
     inline const std::string& GetName() const;
     inline CreatureTypes GetType() const;
-    bool ReceiveDamage(int damage);
-    void HealCreature();
-    virtual int GetDamage() const;
+
+    virtual int GetDamage() const = 0;
+    virtual std::string ToString() const = 0;
 
     static std::string PrintHeading();
-    virtual std::string ToString() const;
-    void SetCreature(const std::string& creatureName, int health, int strength);
-
-    static MemoryAllocationTags AllocateMemory(Creature*& curr, int id = static_cast<int>(CreatureTypes::DEFAULT));
+    static MemoryAllocationTags AllocateMemory(Creature*& curr, int id);
     static MemoryAllocationTags DeallocateMemory(Creature*& curr);
 };
 
@@ -63,6 +63,9 @@ inline const std::string& Creature::GetName() const {
 }
 inline CreatureTypes Creature::GetType() const {
     return type;
+}
+inline void Creature::HealCreature() {
+    currentHealth = maxHealth;
 }
 
 

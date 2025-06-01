@@ -245,26 +245,26 @@ void Army::GetSortFieldFromUser(int& sortField) {
 
         switch (option) {
 
-        case static_cast<int>(CreatureFields::NAME):
-        case static_cast<int>(CreatureFields::CURRENT_HEALTH):
-        case static_cast<int>(CreatureFields::MAX_HEALTH):
-        case static_cast<int>(CreatureFields::STRENGTH):
-        case static_cast<int>(CreatureFields::TYPE): {
+            case static_cast<int>(CreatureFields::NAME):
+            case static_cast<int>(CreatureFields::CURRENT_HEALTH):
+            case static_cast<int>(CreatureFields::MAX_HEALTH):
+            case static_cast<int>(CreatureFields::STRENGTH):
+            case static_cast<int>(CreatureFields::TYPE): {
 
-            sortField = option;
-            break;
-        }
+                sortField = option;
+                break;
+            }
 
-        case ESCAPE: {
-            std::cout << "Returning To Outer Menu\n";
-            break;
-        }
+            case ESCAPE: {
+                std::cout << "Returning To Outer Menu\n";
+                break;
+            }
 
-        default: {
+            default: {
 
-            HandleInvalidOption();
-            break;
-        }
+                HandleInvalidOption();
+                break;
+            }
 
         }
     }
@@ -332,24 +332,24 @@ MemoryAllocationTags Army::BuildArmy(const int forcedSize) {
 
             switch (option) {
 
-            case YES: {
+                case YES: {
 
-                if (DeallocateMemory() == MemoryAllocationTags::SUCCESS) {
-                    ALLOCATION_ATTEMPT_STATE = BuildArmy(armySize);
+                    if (DeallocateMemory() == MemoryAllocationTags::SUCCESS) {
+                        ALLOCATION_ATTEMPT_STATE = BuildArmy(armySize);
+                    }
+
+                    break;
                 }
+                case NO: {
 
-                break;
-            }
-            case NO: {
+                    std::cout << "Returning to original menu...\n";
+                    break;
+                }
+                default: {
 
-                std::cout << "Returning to original menu...\n";
-                break;
-            }
-            default: {
-
-                HandleInvalidOption();
-                break;
-            }
+                    HandleInvalidOption();
+                    break;
+                }
             }
         }
     }

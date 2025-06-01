@@ -4,11 +4,10 @@
 
 class Army {
 private:
-    Creature** pCreatures{nullptr};
+    Creature* *pCreatures{nullptr};
 
     int usedSize{0}, maxSize{0};
     std::string name{"*"};
-
 
     std::string SearchByNameHelper(std::string& searchQuery) const;
 

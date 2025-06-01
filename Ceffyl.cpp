@@ -6,7 +6,9 @@
 Ceffyl::Ceffyl() {
     type = CreatureTypes::CEFFYL;
 }
+
 Ceffyl::Ceffyl(const Ceffyl& source) : Creature(source) {}
+
 Ceffyl::~Ceffyl() {}
 
 int Ceffyl::GetDamage() const {

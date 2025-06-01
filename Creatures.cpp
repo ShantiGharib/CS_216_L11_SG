@@ -34,15 +34,8 @@ Creature::~Creature() {
     SetCreature("*", STRENGTH_DEFAULT, HEALTH_DEFAULT);
 }
 
-void Creature::HealCreature() {
-    currentHealth = maxHealth;
-}
-
 int Creature::GetDamage() const {
-
-    //const for each function call, NOT for the entirety of the program. re-calculates each instance.
-    const int DAMAGE = 1 + (rand() % strength);
-    return DAMAGE;
+    return 1 + (rand() % strength);
 }
 
 bool Creature::ReceiveDamage(int damage) {
@@ -91,26 +84,26 @@ Creature* Creature::AllocateNewCreature(int id) {
     //Helper function of "AllocateMemory"
     Creature* curr{nullptr};
     switch (id) {
-    case static_cast<int>(CreatureTypes::CEFFYL): {
-        curr = new Ceffyl();
-        break;
-    }
-    case static_cast<int>(CreatureTypes::BAHAMUT): {
-        curr = new Bahamut();
-        break;
-    }
-    case static_cast<int>(CreatureTypes::CYBERBAHAMUT): {
-        curr = new CyberBahamut();
-        break;
-    }
-    case static_cast<int>(CreatureTypes::NUGGLE): {
-        curr = new Nuggle();
-        break;
-    }
-    default: {
-        curr = new Creature();
-        break;
-    }
+        case static_cast<int>(CreatureTypes::CEFFYL): {
+            curr = new Ceffyl();
+            break;
+        }
+        case static_cast<int>(CreatureTypes::BAHAMUT): {
+            curr = new Bahamut();
+            break;
+        }
+        case static_cast<int>(CreatureTypes::CYBERBAHAMUT): {
+            curr = new CyberBahamut();
+            break;
+        }
+        case static_cast<int>(CreatureTypes::NUGGLE): {
+            curr = new Nuggle();
+            break;
+        }
+        default: {
+            std::cerr << "Invalid Creature Type ID\n";
+            break;
+        }
     }
     return curr;
 }

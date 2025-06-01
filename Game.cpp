@@ -13,11 +13,9 @@ Game::Game() {
     teamB.SetArmyName("B");
 }
 
-
 Game::Game(const Game& source) {
     operator=(source);
 }
-
 
 void Game::operator=(const Game& source) {
     if (this != &source) {
@@ -26,9 +24,7 @@ void Game::operator=(const Game& source) {
     }
 }
 
-
 Game::~Game() {}
-
 
 std::string Game::ActionHeading() {
 
@@ -47,7 +43,6 @@ std::string Game::ActionHeading() {
 
     return result.str();
 }
-
 
 std::string Game::ActionToString(const std::string& attacker, int damage, const std::string& attackerArmyName, const std::string& defender, int remainingHealth, const std::string& defenderArmyName) const {
 
